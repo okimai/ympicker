@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    <script src="ympicker.js"></script>
+</head>
+<script>
+    $(function(){
+        $("#date").ympicker({
+            closeText: '閉じる',
+            prevText: '<前',
+            nextText: '次>',
+            currentText: '今日',
+            monthNames: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+            monthNamesShort: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+            dateFormat: 'yy/mm',
+            yearSuffix: '年',
+            numberOfMonths: 3,
+            changeYear: false,
+            showCurrentAtPos: 12
+        });
+    });
+</script>
+<body style="text-align: center">
+    <input type="text" id="date"/>
+
+</body>
+</html>
