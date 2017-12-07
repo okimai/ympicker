@@ -1322,6 +1322,7 @@
                 inst.currentMonth = (dates ? inst.drawMonth : 0);
                 inst.currentYear = (dates ? inst.drawYear : 0);
             }
+            /** modified end **/
             this._adjustInstDate(inst);
         },
 
