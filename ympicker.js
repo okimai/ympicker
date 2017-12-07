@@ -670,9 +670,8 @@
                 $.ympicker._pos[0] -= document.documentElement.scrollLeft;
                 $.ympicker._pos[1] -= document.documentElement.scrollTop;
             }
-            /**
-             * modified by okimai start
-             */
+            /** modified by okimai start **/
+            /** 左側に少し寄らせる **/
             // var offset = {left: $.ympicker._pos[0], top: $.ympicker._pos[1]};
             var leftOffset = 350;
             var offset = {left: $.ympicker._pos[0] - leftOffset, top: $.ympicker._pos[1]};
@@ -1307,6 +1306,7 @@
                 dates = (noDefault ? '' : dates);
             }
             /** modified by okimai start **/
+            /** 日付をセットさせる。 **/
             if(!dates){
                 inst.selectedDay = date.getDate();
                 inst.drawMonth = inst.selectedMonth = date.getMonth();
@@ -1579,6 +1579,7 @@
                                         (printDate.getTime() == currentDate.getTime() ? ' ui-state-active' : '') + // highlight selected day
 
                                         /** modified by okimai start **/
+                                        /** 該当月の背景色をセットする。 **/
                                         // (otherMonth ? ' ui-priority-secondary' : '') + // distinguish dates from other months
                                         (otherMonth || col != 1 ? ' ui-priority-secondary' : '') +
                                         /** modified end **/
@@ -1593,6 +1594,7 @@
                     }
 
                     /** modified by okimai start **/
+                    /** 来年を表示させる。 **/
                     // drawMonth++;
                     // if (drawMonth > 11) {
                     //     drawMonth = 0;
