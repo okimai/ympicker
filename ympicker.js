@@ -1,6 +1,3 @@
-/**
- * Created by okimai on 2017/12/6.
- */
 /*!
  * jQuery UI Ympicker 1.8.21
  *
@@ -1309,12 +1306,22 @@
                 this.log(event);
                 dates = (noDefault ? '' : dates);
             }
-            inst.selectedDay = date.getDate();
-            inst.drawMonth = inst.selectedMonth = date.getMonth();
-            inst.drawYear = inst.selectedYear = date.getFullYear();
-            inst.currentDay = (dates ? date.getDate() : 0);
-            inst.currentMonth = (dates ? date.getMonth() : 0);
-            inst.currentYear = (dates ? date.getFullYear() : 0);
+            /** modified by okimai start **/
+            if(!dates){
+                inst.selectedDay = date.getDate();
+                inst.drawMonth = inst.selectedMonth = date.getMonth();
+                inst.drawYear = inst.selectedYear = date.getFullYear();
+                inst.currentDay = (dates ? date.getDate() : 0);
+                inst.currentMonth = (dates ? date.getMonth() : 0);
+                inst.currentYear = (dates ? date.getFullYear() : 0);
+            } else {
+                inst.selectedDay = 1;
+                inst.drawMonth = inst.selectedMonth = new Number(dates.substring(5,7)) - 1;
+                inst.drawYear = inst.selectedYear = new Number(dates.substring(0,4));
+                inst.currentDay = (dates ? inst.selectedDay : 0);
+                inst.currentMonth = (dates ? inst.drawMonth : 0);
+                inst.currentYear = (dates ? inst.drawYear : 0);
+            }
             this._adjustInstDate(inst);
         },
 
